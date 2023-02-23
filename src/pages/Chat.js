@@ -55,8 +55,16 @@ const Chat = () => {
         <div className='flex'>
           <div className='bg-blue-500 w-[30%] h-[90vh] hidden md:block'>Chat sidebar containing the cunny carly image and title -- desktop view only</div>
           <div className='bg-[whitesmoke] w-full md:w-[70%] h-[90vh] flex flex-col justify-between'>
-            <div className='h-[80vh] bg-gray-300'>
+            {/* <div className='h-[80vh] bg-gray-300'>
               <div className='h-full overflow-y-auto'>
+                {chatLog.map((message, index) => (
+                  <ChatMessage key={index} message={message} />
+                ))}
+                <div ref={bottomRef} />
+              </div>
+            </div> */}
+            <div className='h-[80vh] bg-gray-300 relative'>
+              <div className='w-full overflow-y-auto absolute bottom-0' style={{maxHeight:'100%'}}>
                 {chatLog.map((message, index) => (
                   <ChatMessage key={index} message={message} />
                 ))}
