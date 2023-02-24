@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BiSend } from 'react-icons/bi'
+import { ThreeDots } from 'react-loader-spinner'
 import ChatMessage from '../components/ChatMessage'
+import cunning from '../assest/cunning.png'
+import hapsie from '../assest/hapsie.png'
 
 const Chat = () => {
   const [input, setInput] = useState()
@@ -31,7 +34,7 @@ const Chat = () => {
       setChatLog(chatLogNew)
       setLoading(true)
 
-      const response = await fetch('https://miro-app.herokuapp.com/api/chat', {
+      const response = await fetch('https://hapsie.herokuapp.com/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -49,29 +52,35 @@ const Chat = () => {
 
 
   return (
-    <div className='bg-red-500 h-screen'>
+    <div className='h-screen'>
       <div>
-        <div className='bg-red-500 h-[5vh]'>Hapsie</div>
+
+        <div className='bg-red-500 h-[10vh] flex justify-center items-center'><img src={hapsie} alt='logo' style={{height: "50px"}}/></div>
+
         <div className='flex'>
-          <div className='bg-blue-500 w-[30%] h-[90vh] hidden md:block'>Chat sidebar containing the cunny carly image and title -- desktop view only</div>
-          <div className='bg-[whitesmoke] w-full md:w-[70%] h-[90vh] flex flex-col justify-between'>
-            {/* <div className='h-[80vh] bg-gray-300'>
-              <div className='h-full overflow-y-auto'>
+          <div style={{ borderRight:"2px solid rgb(59 130 246)"}} className='bg-red-500 w-[30%] h-[80vh] hidden md:block'>
+
+          </div>
+          <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>
+            <div className='h-[80vh] flex justify-center bg-white relative'>
+              <div className='w-full px-[4%] overflow-y-auto absolute bottom-0' style={{maxHeight:'100%'}}>
                 {chatLog.map((message, index) => (
                   <ChatMessage key={index} message={message} />
                 ))}
-                <div ref={bottomRef} />
-              </div>
-            </div> */}
-            <div className='h-[80vh] bg-gray-300 relative'>
-              <div className='w-full overflow-y-auto absolute bottom-0' style={{maxHeight:'100%'}}>
-                {chatLog.map((message, index) => (
-                  <ChatMessage key={index} message={message} />
-                ))}
+                {loading && <div><ThreeDots
+                  height="20"
+                  width="80"
+                  radius="9"
+                  color="#B1A1ED"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClassName=""
+                  visible={true}
+                /></div>}
                 <div ref={bottomRef} />
               </div>
             </div>
-            <div className='h-[10vh] py-4 bg-red-500'>
+            <div className='h-[10vh] py-4 bg-white'>
               <form onSubmit={handleSubmit} className='flex justify-center'>
                 <div className='flex justify-center items-center bg-white w-[80%] border-2 border-blue-500 rounded-xl pr-2'>
                   <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Enter your question' className='w-[100%] h-[40px] rounded-xl px-2' style={{outline: 'none'}}/>
@@ -81,7 +90,8 @@ const Chat = () => {
             </div>
           </div>
         </div>
-        <div className='bg-blue-500 h-[5vh]'>footer</div>
+
+        <div className='bg-red-500 h-[10vh]'>footer</div>
       </div>
     </div>
   )

@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.chat-log {
+  width: 90%;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  display: flex;
+  width: 100%;
+  background-color: rgb(59 130 246);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(59 130 246);
+  color: white;
+}
+
+.chatgpt {
+  color: white;
+  background-color: #e4bd24;
+  width: 100% !important;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.message {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 760px) {
+  
+}
