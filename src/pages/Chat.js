@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BiSend } from 'react-icons/bi'
 import { ThreeDots } from 'react-loader-spinner'
+import { RiUser5Fill } from 'react-icons/ri'
 import ChatMessage from '../components/ChatMessage'
-import cunning from '../assest/cunning.png'
+import cunningfull from '../assest/cunningfull.png'
 import hapsie from '../assest/hapsie.png'
+
 
 const Chat = () => {
   const [input, setInput] = useState()
@@ -59,7 +61,7 @@ const Chat = () => {
 
         <div className='flex'>
           <div style={{ borderRight:"2px solid rgb(59 130 246)"}} className='bg-red-500 w-[30%] h-[80vh] hidden md:block'>
-
+            <img src={cunningfull} alt='cunningfull'/>
           </div>
           <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>
             <div className='h-[80vh] flex justify-center bg-white relative'>
@@ -91,7 +93,10 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className='bg-red-500 h-[10vh]'>footer</div>
+        <div className='bg-red-500 h-[10vh] px-4 flex items-center justify-between w-full'>
+          <p className='text-center w-full'>hapsie</p>
+          <div className='flex gap-2 items-center'><RiUser5Fill/>admin</div>
+        </div>
       </div>
     </div>
   )
