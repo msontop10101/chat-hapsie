@@ -94,8 +94,8 @@ const Chat = () => {
         </div>
 
         <div className='bg-red-500 h-[10vh] px-4 flex items-center justify-between w-full'>
-          <p className='text-center w-full'>hapsie</p>
-          <div className='flex gap-2 items-center'><RiUser5Fill/>admin</div>
+          <p className='text-center w-full text-white font-semibold'>Hapsie &copy; 2023</p>
+          <div className='flex gap-2 items-center text-white'><RiUser5Fill/>admin</div>
         </div>
       </div>
     </div>
