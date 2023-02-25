@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { BiSend } from 'react-icons/bi'
 import { ThreeDots } from 'react-loader-spinner'
 import { RiUser5Fill } from 'react-icons/ri'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import ChatMessage from '../components/ChatMessage'
 import cunningfull from '../assest/CunningCarly-01.png'
 import hapsie from '../assest/hapsielogo.png'
@@ -10,6 +11,7 @@ import hapsie from '../assest/hapsielogo.png'
 const Chat = () => {
   const [input, setInput] = useState()
   const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(true)
   const [chatLog, setChatLog] = useState([
     //    {
     //   user: 'me',
@@ -55,6 +57,18 @@ const Chat = () => {
 
   return (
     <div className='h-screen'>
+
+      {showModal && <div className="bg-slate-800 z-50 bg-opacity-50 flex md:hidden justify-center items-center absolute top-0 right-0 bottom-0 left-0">
+        <div class="bg-white px-4 py-4 rounded-3xl text-center w-[90%]">
+          <div className='flex justify-between items-center py-4'>
+            <p className='font-bold text-xl'>Disclaimer for Parents</p>
+            <div><AiOutlineCloseCircle size='1.8rem' onClick={() => setShowModal(false)} /></div>
+          </div>
+          <div>
+            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com'>abuse@hapsie.com</a> immediately.</p>
+          </div>
+        </div>
+      </div>}
       <div>
 
         <div className='bg-red-500 h-[10vh] flex justify-center items-center'><img src={hapsie} alt='logo' style={{height: "80px"}}/></div>
@@ -64,7 +78,7 @@ const Chat = () => {
             {/* <p className='text-white font-semibold'>Cunning Carly</p> */}
             <div className='h-[50%] overflow-hidden'><img src={cunningfull} alt='cunningfull'/></div>
             <div>
-              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email abuse@hapsie.com immediately.</p>
+              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' >abuse@hapsie.com</a>immediately.</p>
             </div>
           </div>
           <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>
@@ -97,11 +111,11 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className='bg-red-500 h-[10vh] px-4 hidden md:flex  items-center justify-between w-full'>
+        <div className='bg-red-500 h-[10vh] px-4 flex  items-center justify-between w-full'>
           <p className='text-center w-full text-white font-semibold'>Hapsie &copy; 2023</p>
           <div className='flex gap-2 items-center text-white'><RiUser5Fill/>admin</div>
         </div>
-        <div className='bg-red-500 min-h-[10vh] px-4 block md:hidden'>
+        {/* <div className='bg-red-500 min-h-[10vh] px-4 block md:hidden'>
           <div className='flex justify-between'>
             <div><p className='text-center w-full text-white font-semibold flex justify'>Hapsie &copy; 2023</p></div>
             <div className='flex justify-end items-center text-white'><RiUser5Fill />admin</div>
@@ -109,7 +123,7 @@ const Chat = () => {
           <div>
             <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email abuse@hapsie.com immediately.</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
