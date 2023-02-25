@@ -70,14 +70,13 @@ const Chat = () => {
       </div>}
       <div>
 
-        <div className='bg-red-500 h-[10vh] flex justify-center items-center'><img src={hapsie} alt='logo' style={{height: "80px"}}/></div>
+        <div className='bg-red-500 h-[10vh] flex justify-center items-center'><a href='https://www.hapsie.com/'><img src={hapsie} alt='logo' style={{height: "80px"}}/></a></div>
 
         <div className='flex'>
           <div style={{ borderRight:"2px solid rgb(59 130 246)"}} className='bg-red-500 w-[30%] h-[80vh] px-4 hidden md:block'>
-            {/* <p className='text-white font-semibold'>Cunning Carly</p> */}
-            <div className='h-[50%] overflow-hidden'><img src={cunningfull} alt='cunningfull'/></div>
+            <div className='h-[50%] overflow-hidden'><img src={cunningfull} alt='cunningfull' /></div>
             <div>
-              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' >abuse@hapsie.com</a>immediately.</p>
+              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' >abuse@hapsie.com</a> immediately.</p>
             </div>
           </div>
           <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>
@@ -114,7 +113,7 @@ const Chat = () => {
           <p className='text-center w-full text-white font-semibold'>Hapsie &copy; 2023</p>
         </div>
         <div className='bg-red-500 h-[10vh] justify-evenly gap-4 flex md:hidden items-center w-full'>
-          <div><img src={hapsie} width={100} height={70} alt='logo' /></div>
+          <div><a href='https://www.hapsie.com/'><img src={hapsie} width={100} height={70} alt='logo' /></a></div>
           <div><p onClick={() => setChatLog([
             { 
               user: 'gpt', 
