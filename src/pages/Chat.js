@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BiSend } from 'react-icons/bi'
 import { ThreeDots } from 'react-loader-spinner'
-import { RiUser5Fill } from 'react-icons/ri'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import ChatMessage from '../components/ChatMessage'
 import cunningfull from '../assest/CunningCarly-01.png'
@@ -111,19 +110,19 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className='bg-red-500 h-[10vh] px-4 flex  items-center justify-between w-full'>
+        <div className='bg-red-500 h-[10vh] px-4 hidden md:flex items-center justify-between w-full'>
           <p className='text-center w-full text-white font-semibold'>Hapsie &copy; 2023</p>
-          <div className='flex gap-2 items-center text-white'><RiUser5Fill/>admin</div>
         </div>
-        {/* <div className='bg-red-500 min-h-[10vh] px-4 block md:hidden'>
-          <div className='flex justify-between'>
-            <div><p className='text-center w-full text-white font-semibold flex justify'>Hapsie &copy; 2023</p></div>
-            <div className='flex justify-end items-center text-white'><RiUser5Fill />admin</div>
-          </div>
-          <div>
-            <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email abuse@hapsie.com immediately.</p>
-          </div>
-        </div> */}
+        <div className='bg-red-500 h-[10vh] justify-evenly gap-4 flex md:hidden items-center w-full'>
+          <div><img src={hapsie} width={100} height={70} alt='logo' /></div>
+          <div><p onClick={() => setChatLog([
+            { 
+              user: 'gpt', 
+              message: 'I am here to help you with questions and answers about the environment, sustainable and recycling. But I can also do fun creative tasks too! For example, I can write poems, lesson plans, to do lists. I can give you step by step guides how to arrange beach cleans (for example). Talk to me and let me help you better the world around you!' 
+            }
+          ])} className='text-center w-full text-white'>What can i do</p></div>
+          <div className='flex gap-2 text-center text-white' onClick={() => setShowModal(true)}><p>Parental Disclaimer</p></div>
+        </div>
       </div>
     </div>
   )
