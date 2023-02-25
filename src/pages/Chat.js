@@ -89,7 +89,7 @@ const Chat = () => {
                   height="20"
                   width="80"
                   radius="9"
-                  color="#B1A1ED"
+                  color="rgb(59 130 246)"
                   ariaLabel="three-dots-loading"
                   wrapperStyle={{}}
                   wrapperClassName=""
@@ -114,7 +114,7 @@ const Chat = () => {
         </div>
         <div className='bg-red-500 h-[10vh] justify-evenly gap-4 flex md:hidden items-center w-full'>
           <div><a href='https://www.hapsie.com/'><img src={hapsie} width={100} height={70} alt='logo' /></a></div>
-          <div><p onClick={() => setChatLog([
+          <div><p onClick={() => setChatLog([...chatLog,
             { 
               user: 'gpt', 
               message: 'I am here to help you with questions and answers about the environment, sustainable and recycling. But I can also do fun creative tasks too! For example, I can write poems, lesson plans, to do lists. I can give you step by step guides how to arrange beach cleans (for example). Talk to me and let me help you better the world around you!' 
