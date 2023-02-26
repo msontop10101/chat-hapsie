@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BiSend } from 'react-icons/bi'
 import { ThreeDots } from 'react-loader-spinner'
-import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { AiFillCloseCircle } from 'react-icons/ai'
 import ChatMessage from '../components/ChatMessage'
 import cunningfull from '../assest/CunningCarly-01.png'
 import hapsie from '../assest/hapsielogo.png'
@@ -16,10 +16,10 @@ const Chat = () => {
     //   user: 'me',
     //   message: 'I want to use chatgpt today'
     // },
-    // {
-    //   user: 'gpt',
-    //   message: 'How can i help you?'
-    // }
+    {
+      user: 'gpt',
+      message: 'Hi there! My name is Cunning Carly and i\'m 11 years old. I love helping people understand the impact of climate change and how to protect our enviroment. Do you have any questions about climate change or sustainability'
+    }
   ])
   const bottomRef = useRef(null);
   useEffect(() => {
@@ -60,8 +60,8 @@ const Chat = () => {
       {showModal && <div className="bg-slate-800 z-50 bg-opacity-50 flex md:hidden justify-center items-center absolute top-0 right-0 bottom-0 left-0">
         <div class="bg-white px-4 py-4 rounded-3xl text-center w-[90%]">
           <div className='flex justify-between items-center py-4'>
-            <p className='font-bold text-xl'>Disclaimer for Parents</p>
-            <div><AiOutlineCloseCircle size='1.8rem' onClick={() => setShowModal(false)} /></div>
+            <p className='font-bold text-xl'>Disclaimer for Parents or Guardians</p>
+            <div><AiFillCloseCircle color='rgb(239 68 68)' size='1.8rem' onClick={() => setShowModal(false)} /></div>
           </div>
           <div>
             <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com'>abuse@hapsie.com</a> immediately.</p>
@@ -101,7 +101,7 @@ const Chat = () => {
             <div className='h-[10vh] py-4 bg-white'>
               <form onSubmit={handleSubmit} className='flex justify-center'>
                 <div className='flex justify-center items-center bg-white w-[80%] border-2 border-blue-500 rounded-xl pr-2'>
-                  <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Enter your question' className='w-[100%] h-[40px] rounded-xl px-2' style={{outline: 'none'}}/>
+                  <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Say hi or ask a question!' className='w-[100%] h-[40px] rounded-xl px-2' style={{outline: 'none'}}/>
                   <button type='submit'><BiSend size='1.8rem' className='text-blue-500' /></button>
                 </div>
               </form>
