@@ -119,7 +119,7 @@ const Chat = () => {
               user: 'gpt', 
               message: 'I am here to help you with questions and answers about the environment, sustainable and recycling. But I can also do fun creative tasks too! For example, I can write poems, lesson plans, to do lists. I can give you step by step guides how to arrange beach cleans (for example). Talk to me and let me help you better the world around you!' 
             }
-          ])} className='text-center w-full text-white'>What Can I Do</p></div>
+          ])} className='text-center w-full text-white'>What Can I Do?</p></div>
           <div className='flex gap-2 text-center text-white' onClick={() => setShowModal(true)}><p>Disclaimer</p></div>
         </div>
       </div>
