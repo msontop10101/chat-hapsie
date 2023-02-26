@@ -2,10 +2,12 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import EditContentForm from '../components/EditContentForm'
+import { Navigate } from 'react-router-dom'
 
-const Edit = () => {
+const Edit = ({ loginState }) => {
   return (
     <div>
+          {!loginState && <Navigate to={'/admin'} />}
           <div className='h-screen bg-red-500'>
               <Header />
               <div className='flex justify-center'>

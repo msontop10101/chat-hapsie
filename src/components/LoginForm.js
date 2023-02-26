@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios'
-// import { RotatingLines } from 'react-loader-spinner';
-// import { useAuthContext } from '../context/auth/auth';
+import { RotatingLines } from 'react-loader-spinner';
 import { Navigate } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
@@ -11,21 +10,28 @@ const LoginSchema = Yup.object().shape({
 });
 
 
-const LoginForm = () => {
+const LoginForm = ({getLoginState}) => {
     const [login, setLogin] = useState(false)
-    // cosnt [LoginError, setLoginError] = useState('')
+    const [loading, setLoading] = useState(false)
     const handleLogin = async (values) => {
+        setLoading(true)
         try {
             const response = await axios.post('https://hapsie.herokuapp.com/api/auth', values)
             console.log('login successful')
             console.log(response)
             setLogin(true)
+            setLoading(false)
         }
         catch(error){
             console.log('Error Occured!')
             console.log(error)
+            setLoading(false)
         }
     }
+    useEffect(() => {
+      getLoginState(login)
+    }, [login])
+    
   return (
     <div>
           <Formik
@@ -49,7 +55,18 @@ const LoginForm = () => {
 
                       <div className='w-[100%]'>
                           <div className='flex justify-center py-5 '>
-                              <button type="submit" style={{ backgroundColor: 'black', borderRadius: '10px', border: "none", padding: '10px', width: '100%' }} className='z-40 font-semibold uppercase border-2 border-gray-300 text-white '>Login</button>
+                              <button type="submit" style={{ backgroundColor: 'black', borderRadius: '10px', border: "none", padding: '10px', width: '100%' }} className='z-40 font-semibold uppercase border-2 border-gray-300 text-white '>{
+                                  loading ? <div className='flex justify-center items-center'>
+                                      <RotatingLines
+                                          strokeColor="grey"
+                                          strokeWidth="5"
+                                          animationDuration="0.75"
+                                          width="20"
+                                          visible={true}
+                                      />
+                                      <p className='text-[gray]'>loading...</p>
+                                  </div> : <p>Login</p>
+                              }</button>
 
                           </div>
                       </div>
@@ -63,15 +80,3 @@ const LoginForm = () => {
 export default LoginForm
 
 
-// {
-//                                   loading ? <div className='flex justify-center items-center'>
-//                                       <RotatingLines
-//                                           strokeColor="grey"
-//                                           strokeWidth="5"
-//                                           animationDuration="0.75"
-//                                           width="20"
-//                                           visible={true}
-//                                       />
-//                                       <p className='text-[gray]'>loading...</p>
-//                                   </div> : <p>Login</p>
-//                               }

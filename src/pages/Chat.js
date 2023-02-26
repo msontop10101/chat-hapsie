@@ -58,7 +58,7 @@ const Chat = () => {
     <div className='h-screen'>
 
       {showModal && <div className="bg-slate-800 z-50 bg-opacity-50 flex md:hidden justify-center items-center absolute top-0 right-0 bottom-0 left-0">
-        <div class="bg-white px-4 py-4 rounded-3xl text-center w-[90%]">
+        <div className="bg-white px-4 py-4 rounded-3xl text-center w-[90%]">
           <div className='flex justify-between items-center py-4'>
             <p className='font-bold text-xl'>Disclaimer for Parents or Guardians</p>
             <div><AiFillCloseCircle color='rgb(239 68 68)' size='1.8rem' onClick={() => setShowModal(false)} /></div>
