@@ -16,7 +16,7 @@ const EditContentForm = () => {
   }, [])
   const handleSubmit = async(e) => {
     e.preventDefault()
-    axios.post('https://hapsie.herokuapp.com/api/data/write', {input:newData.input})
+    axios.post('https://hapsie.herokuapp.com/api/data/write', {input: newData.input})
       .then((response) => {
         console.log(response)
       })
