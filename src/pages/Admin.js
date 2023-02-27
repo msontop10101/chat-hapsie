@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import LoginForm from '../components/LoginForm'
 import { useAuthContext } from '../context/auth/auth';
 
-const Admin = ({getLoginState}) => {
+const Admin = ({getLoginState, logina, setLogina}) => {
     const { error } = useAuthContext()
   return (
     <>
@@ -13,7 +13,7 @@ const Admin = ({getLoginState}) => {
               {error && <p className='bg-[#ec6363] z-30 text-white p-2 text-center'>Email/Password is invalid</p>}
             <div className='flex justify-center'>
                   <div className='flex justify-center h-[80vh] w-full md:w-[60%] items-center bg-white rounded-3xl'>
-                      <div className='w-[90%]'><LoginForm getLoginState={getLoginState}/></div>
+                      <div className='w-[90%]'><LoginForm getLoginState={getLoginState} logina={logina} setLogina={setLogina}/></div>
                   </div>
             </div>
             <Footer/>

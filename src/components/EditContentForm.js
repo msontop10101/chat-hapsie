@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-const EditContentForm = () => {
+
+const EditContentForm = ({ setLogina }) => {
   const [initialData, setInitialData] = useState()
   const [loading, setLoading] = useState(false)
   const [newData, setNewData] = useState({
@@ -16,6 +17,7 @@ const EditContentForm = () => {
       })
   }, [])
   const handleSubmit = async (e) => {
+    e.preventDefault()
     setLoading(true)
     const message = newData
     fetch('https://hapsie.herokuapp.com/api/data/write', {
@@ -38,16 +40,16 @@ const EditContentForm = () => {
         <form onSubmit={handleSubmit}>
           <div className='flex flex-col w-full gap-2'>
             <label className='font-semibold text-xl'>Initial</label>
-            <textarea style={{ border: '2px solid black', borderRadius: '10px', height: '25vh', padding: '5px' }} value={initialData} />
+            <textarea style={{ border: '2px solid black', borderRadius: '10px', height: '20vh', padding: '5px' }} value={initialData} />
           </div>
           <div className='flex flex-col w-full gap-2'>
             <label className='font-semibold text-xl'>New Content</label>
-            <textarea style={{ border: '2px solid black', borderRadius: '10px', height: '25vh', padding: '5px' }} value={newData.input} onChange={(e) => setNewData(e.target.value)} />
+            <textarea style={{ border: '2px solid black', borderRadius: '10px', height: '20vh', padding: '5px' }} value={newData.input} onChange={(e) => setNewData(e.target.value)} />
           </div>
 
           <div>
             <button type='submit' className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>{loading ? 'Updating...': 'Submit'}</button>
-            <Link to='/admin'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>Logout</button></Link>
+            <Link to='/'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center' onClick={() => { setLogina(false); localStorage.setItem('logina') }}>Logout</button></Link>
           </div>
         </form>
       </div>

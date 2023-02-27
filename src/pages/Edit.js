@@ -4,16 +4,17 @@ import Footer from '../components/Footer'
 import EditContentForm from '../components/EditContentForm'
 import { Navigate } from 'react-router-dom'
 
-const Edit = ({ loginState }) => {
+const Edit = ({ logina, setLogina }) => {
+  console.log(logina)
   return (
     <div>
-          {!loginState && <Navigate to={'/admin'} />}
+          {!logina && <Navigate to={'/admin'} />}
           <div className='h-screen bg-red-500'>
               <Header />
               <div className='flex justify-center'>
                   <div className='flex justify-center h-[80vh] w-full md:w-[60%] items-center bg-white rounded-3xl'>
                       <div className='w-[90%]'>
-                        <EditContentForm/>
+                        <EditContentForm setLogina={setLogina}/>
                       </div>
                   </div>
               </div>

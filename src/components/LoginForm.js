@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios'
@@ -10,8 +10,7 @@ const LoginSchema = Yup.object().shape({
 });
 
 
-const LoginForm = ({getLoginState}) => {
-    const [login, setLogin] = useState(false)
+const LoginForm = ({logina, setLogina}) => {
     const [loading, setLoading] = useState(false)
     const handleLogin = async (values) => {
         setLoading(true)
@@ -19,7 +18,7 @@ const LoginForm = ({getLoginState}) => {
             const response = await axios.post('https://hapsie.herokuapp.com/api/auth', values)
             console.log('login successful')
             console.log(response)
-            setLogin(true)
+            setLogina(true)
             setLoading(false)
         }
         catch(error){
@@ -28,9 +27,8 @@ const LoginForm = ({getLoginState}) => {
             setLoading(false)
         }
     }
-    useEffect(() => {
-      getLoginState(login)
-    }, [login, getLoginState])
+
+
     
   return (
     <div>
@@ -43,7 +41,7 @@ const LoginForm = ({getLoginState}) => {
           >
               {({ errors, touched }) => (
                   <Form className='w-full flex flex-col gap-5'>
-                      {login && <Navigate to={'/edit'} />}
+                      {logina && <Navigate to={'/edit'} />}
                       <div className="w-[100%] flex flex-col gap-5 z-50">
                           <div className='flex flex-col w-[100%]'>
                               <label className='font-bold mb-1 text-lg text-left' htmlFor="password">Password*</label>
