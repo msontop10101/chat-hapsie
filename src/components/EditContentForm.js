@@ -16,15 +16,7 @@ const EditContentForm = () => {
       })
   }, [])
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    // axios.post('https://86ad-102-89-46-249.eu.ngrok.io/api/data/write', { message: newData.input })
-    //   .then((response) => {
-    //     console.log(response)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
-    // console.log(newData)
+    setLoading(true)
     const message = newData
     fetch('https://hapsie.herokuapp.com/api/data/write', {
       method: 'POST',
@@ -34,7 +26,7 @@ const EditContentForm = () => {
       body: JSON.stringify({
         message
       })
-    }).then((response) => console.log(response))
+    }).then((response) => { console.log(response); setLoading(false)})
       .catch(err => console.log(err))
     console.log(newData)
 
@@ -54,7 +46,7 @@ const EditContentForm = () => {
           </div>
 
           <div>
-            <button type='submit' className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>Submit</button>
+            <button type='submit' className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>{loading ? 'Updating...': 'Submit'}</button>
             <Link to='/admin'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>Logout</button></Link>
           </div>
         </form>

@@ -12,10 +12,6 @@ const Chat = () => {
   const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(true)
   const [chatLog, setChatLog] = useState([
-    //    {
-    //   user: 'me',
-    //   message: 'I want to use chatgpt today'
-    // },
     {
       user: 'gpt',
       message: 'Hi there! My name is Cunning Carly and i\'m 11 years old. I love helping people understand the impact of climate change and how to protect our enviroment. Do you have any questions about climate change or sustainability?'
@@ -64,7 +60,7 @@ const Chat = () => {
             <div><AiFillCloseCircle color='rgb(239 68 68)' size='1.8rem' onClick={() => setShowModal(false)} /></div>
           </div>
           <div>
-            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com'>abuse@hapsie.com</a> immediately.</p>
+            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration:'underline'}}>abuse@hapsie.com</a> immediately.</p>
           </div>
         </div>
       </div>}
@@ -74,9 +70,9 @@ const Chat = () => {
 
         <div className='flex'>
           <div style={{ borderRight: "2px solid rgb(59 130 246)" }} className='bg-red-500 w-[30%] h-[80vh] px-4 hidden md:block'>
-            <div className='h-[50%] overflow-hidden'><img src={cunningfull} alt='cunningfull' /></div>
-            <div>
-              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' >abuse@hapsie.com</a> immediately.</p>
+            <div className='h-[50%] w-full flex justify-center'><img src={cunningfull} width={180} height={180} alt='cunningfull' /></div>
+            <div className='h-[50%]'>
+              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration: 'underline'}} >abuse@hapsie.com</a> immediately.</p>
             </div>
           </div>
           <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>

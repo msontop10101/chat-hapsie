@@ -30,7 +30,7 @@ const LoginForm = ({getLoginState}) => {
     }
     useEffect(() => {
       getLoginState(login)
-    }, [login])
+    }, [login, getLoginState])
     
   return (
     <div>
