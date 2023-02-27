@@ -12,7 +12,7 @@ const EditContentForm = ({ setLogina }) => {
   useEffect(() => {
     axios.get('https://hapsie.herokuapp.com/api/data/read')
       .then((response) => {
-        console.log(response)
+        console.log(`RESPONSE: ${response}`)
         setInitialData(response.data.data.message)
       })
   }, [])
@@ -31,6 +31,7 @@ const EditContentForm = ({ setLogina }) => {
     }).then((response) => { console.log(response); setLoading(false)})
       .catch(err => console.log(err))
     console.log(newData)
+    console.log(initialData)
 
   }
 
@@ -49,7 +50,7 @@ const EditContentForm = ({ setLogina }) => {
 
           <div>
             <button type='submit' className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>{loading ? 'Updating...': 'Submit'}</button>
-            <Link to='/'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center' onClick={() => { setLogina(false); localStorage.setItem('logina') }}>Logout</button></Link>
+            <Link to='/'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center' onClick={() => { setLogina(false); localStorage.setItem('logina', 'false') }}>Logout</button></Link>
           </div>
         </form>
       </div>
