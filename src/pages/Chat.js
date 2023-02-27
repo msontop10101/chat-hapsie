@@ -60,7 +60,7 @@ const Chat = () => {
             <div><AiFillCloseCircle color='rgb(239 68 68)' size='1.8rem' onClick={() => setShowModal(false)} /></div>
           </div>
           <div>
-            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration:'underline'}}>abuse@hapsie.com</a> immediately.</p>
+            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration:'underline', color:'blue'}}>abuse@hapsie.com</a> immediately.</p>
           </div>
         </div>
       </div>}
@@ -72,7 +72,7 @@ const Chat = () => {
           <div style={{ borderRight: "2px solid rgb(59 130 246)" }} className='bg-red-500 w-[30%] h-[80vh] px-4 hidden md:block'>
             <div className='h-[50%] w-full flex justify-center'><img src={cunningfull} width={180} height={180} alt='cunningfull' /></div>
             <div className='h-[50%]'>
-              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration: 'underline'}} >abuse@hapsie.com</a> immediately.</p>
+              <p className='text-white'><span className='font-semibold'>Disclaimer for Parents:</span> This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:abuse@hapsie.com' style={{textDecoration: 'underline',color:'blue'}} >abuse@hapsie.com</a> immediately.</p>
             </div>
           </div>
           <div className='bg-white w-full md:w-[70%] h-[80vh] flex flex-col justify-between'>
