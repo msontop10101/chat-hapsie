@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     let loginState = localStorage.getItem('logina')
-    typeof loginState === 'string' ? setLogina(JSON.parse(logina)) : setLogina(logina)
+    typeof loginState === 'string' ? setLogina(JSON.parse(loginState)) : setLogina(loginState)
     console.log(`GET: ${loginState}`)
   }, [logina])
   
