@@ -8,20 +8,6 @@ import Edit from './pages/Edit';
 function App() {
   const [logina, setLogina] = useState(false)
 
-  useEffect(() => {
-    let loginState = localStorage.getItem('logina')
-    typeof loginState === 'string' ? setLogina(JSON.parse(loginState)) : setLogina(loginState)
-    console.log(`GET: ${loginState}`)
-  }, [logina])
-  
-  useEffect(() => {
-    localStorage.setItem('logina', JSON.stringify(logina))
-    console.log(typeof logina)
-  },[logina])
-  
-
-  console.log(`Login State: ${typeof logina}`)
-
   return (
     <>
       <Routes>

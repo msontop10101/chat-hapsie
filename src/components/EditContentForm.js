@@ -50,7 +50,7 @@ const EditContentForm = ({ setLogina }) => {
 
           <div>
             <button type='submit' className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center'>{loading ? 'Updating...': 'Submit'}</button>
-            <Link to='/'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center' onClick={() => { setLogina(false); localStorage.setItem('logina', 'false') }}>Logout</button></Link>
+            <Link to='/'><button className='bg-black text-white font-xl p-4 my-2 rounded-xl w-full text-center' onClick={() => { setLogina(false)}}>Logout</button></Link>
           </div>
         </form>
       </div>
