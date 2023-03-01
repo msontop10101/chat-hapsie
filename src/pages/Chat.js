@@ -105,7 +105,7 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className='bg-red-500 h-[10vh] px-4 hidden md:flex w-full'>
+        <div className='bg-red-500 h-[10vh] px-4 hidden md:flex w-full justify-end items-center'>
           <div className='w-[50%] flex'>
             <p className=' w-[50%] text-white font-semibold'>Hapsie &copy; 2023</p>
             <div className='flex w-[50%] text-right cursor-pointer'><p onClick={() => setChatLog([...chatLog,
