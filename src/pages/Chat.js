@@ -65,7 +65,6 @@ const Chat = () => {
         </div>
       </div>}
       <div>
-
         <div className='bg-red-500 h-[10vh] flex justify-center items-center'><a href='https://www.hapsie.com/'><img src={hapsie} alt='logo' style={{ height: "80px" }} /></a></div>
 
         <div className='flex'>
