@@ -60,7 +60,7 @@ const Chat = () => {
             <div><AiFillCloseCircle color='rgb(239 68 68)' size='1.8rem' onClick={() => setShowModal(false)} /></div>
           </div>
           <div>
-            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:carly@hapsie.com' style={{textDecoration:'underline', color:'blue'}}>abuse@hapsie.com</a> immediately.</p>
+            <p className=''>This Cunning Carly chatbot is automated and is not monitored by a human in real-time. It has been trained on the latest AI to help answer questions and give guidance about bettering the environment. We have made every effort to stop it providing dangerous and inappropriate information or responses but exceptions can happen. We only suggest children use this with moderation of an adult. Any issues please email <a href='mailto:carly@hapsie.com' style={{textDecoration:'underline', color:'blue'}}>carly@hapsie.com</a> immediately.</p>
           </div>
         </div>
       </div>}
