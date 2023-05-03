@@ -11,14 +11,12 @@ const Chat = () => {
   const [input, setInput] = useState()
   const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(true)
-  const [chatLog, setChatLog] = useState(() => {
-    return JSON.parse(localStorage.getItem('chatLogStored')) || [
-      {
-        user: 'gpt',
-        message: 'Hi there! My name is Cunning Carly and i\'m 11 years old. I love helping people understand the impact of climate change and how to protect our enviroment. Do you have any questions about climate change or sustainability?'
-      }
-    ]
-  });
+  const [chatLog, setChatLog] = useState([
+    {
+      user: 'gpt',
+      message: 'Hi there! My name is Cunning Carly and i\'m 11 years old. I love helping people understand the impact of climate change and how to protect our enviroment. Do you have any questions about climate change or sustainability?'
+    }
+  ]);
 
   
 
