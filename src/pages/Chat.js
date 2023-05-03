@@ -27,12 +27,6 @@ const Chat = () => {
     localStorage.setItem('chatLogStored', JSON.stringify(chatLog));
   },[chatLog])
 
-  // useEffect(() => {
-  //   const storedChat = localStorage.getItem('chatLog');
-  //   if (storedChat) {
-  //     setChatLog(JSON.parse(storedChat));
-  //   }
-  // }, []);
 
   useEffect(() => {
     const clearStorage = setTimeout(() => {
@@ -55,6 +49,7 @@ const Chat = () => {
       let chatLogNew = [...chatLog, { user: 'me', message: `${input}` }]
       
       const message = input;
+      const history_data = localStorage.getItem('chatLogStored')
       console.log(input)
 
       setInput("")
@@ -68,6 +63,7 @@ const Chat = () => {
         },
         body: JSON.stringify({
           message, //: messages
+          history_data
         })
       }).catch(error => { setLoading(false); console.log('Error!') });
       const data = await response.json();
@@ -75,6 +71,7 @@ const Chat = () => {
       // localStorage.setItem('chatLog', JSON.stringify(chatLog));
       setLoading(false)
       console.log(data.data.message)
+      console.log(`History Data: ${history_data}`)
     }
   }
 
